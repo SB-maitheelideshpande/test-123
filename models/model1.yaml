@@ -1,0 +1,39 @@
+title: model1
+x-stoplight:
+  id: ruk3yht8st15z
+type: object
+description: model1
+required:
+  - uid
+  - email
+  - fname
+  - lname
+properties:
+  uid:
+    type: string
+    x-stoplight:
+      id: gwbgljwf603vk
+  address:
+    type: string
+    x-stoplight:
+      id: fcqo6fda302wu
+    description: address check
+  email:
+    type: boolean
+    x-stoplight:
+      id: 9bapvb90o8bix
+    description: email check
+  fname:
+    type: string
+    x-stoplight:
+      id: hd2sypplh858t
+    description: fname check
+  lname:
+    type: string
+    x-stoplight:
+      id: h8zweq6wfz5mp
+    description: lname check
+  areacode:
+    type: integer
+    x-stoplight:
+      id: gfiw4eruqv0gr
