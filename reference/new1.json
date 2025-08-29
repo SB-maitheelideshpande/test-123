@@ -17,6 +17,22 @@
       "parameters": [
         {
           "schema": {
+            "type": "string"
+          },
+          "name": "userId",
+          "in": "path",
+          "required": true
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "userId",
+          "in": "path",
+          "required": true
+        },
+        {
+          "schema": {
             "type": "integer"
           },
           "name": "userId",
@@ -142,6 +158,173 @@
         },
         "x-stoplight": {
           "id": "2hc5f2dghbrjh"
+        }
+      },
+      "post": {
+        "summary": "aa Your POST endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "post-users-userId",
+        "x-stoplight": {
+          "id": "dbqlzlr9uvnso"
+        }
+      },
+      "head": {
+        "summary": "bb Your HEAD endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "head-users-userId",
+        "x-stoplight": {
+          "id": "l6tuj53t7knyj"
+        }
+      }
+    },
+    "/testusers/{testing}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "testing",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Get User Info by User ID",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "User Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "Get User Alice Smith": {
+                    "value": {
+                      "id": 142,
+                      "firstName": "Alice",
+                      "lastName": "Smith",
+                      "email": "alice.smith@gmail.com",
+                      "dateOfBirth": "1997-10-31",
+                      "emailVerified": true,
+                      "signUpDate": "2019-08-24"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User Not Found"
+          }
+        },
+        "operationId": "get-users-userId",
+        "description": "Retrieve the information of the user with the matching user ID.",
+        "x-stoplight": {
+          "id": "beypaefux5vxa"
+        }
+      },
+      "patch": {
+        "summary": "Update User Information",
+        "operationId": "patch-users-userId",
+        "responses": {
+          "200": {
+            "description": "User Updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "examples": {
+                  "Updated User Rebecca Baker": {
+                    "value": {
+                      "id": 13,
+                      "firstName": "Rebecca",
+                      "lastName": "Baker",
+                      "email": "rebecca@gmail.com",
+                      "dateOfBirth": "1985-10-02",
+                      "emailVerified": false,
+                      "createDate": "2019-08-24"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User Not Found"
+          },
+          "409": {
+            "description": "Email Already Taken"
+          }
+        },
+        "description": "Update the information of an existing user.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string",
+                    "description": "If a new email is given, the user's email verified property will be set to false."
+                  },
+                  "dateOfBirth": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "Update First Name": {
+                  "value": {
+                    "firstName": "Rebecca"
+                  }
+                },
+                "Update Email": {
+                  "value": {
+                    "email": "rebecca@gmail.com"
+                  }
+                },
+                "Update Last Name & Date of Birth": {
+                  "value": {
+                    "lastName": "Baker",
+                    "dateOfBirth": "1985-10-02"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Patch user properties to update."
+        },
+        "x-stoplight": {
+          "id": "1svq3j3mc7901"
+        }
+      },
+      "post": {
+        "summary": "aa Your POST endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "post-users-userId",
+        "x-stoplight": {
+          "id": "i8xxkn62hs54u"
+        }
+      },
+      "head": {
+        "summary": "bb Your HEAD endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "head-users-userId",
+        "x-stoplight": {
+          "id": "1aoz3dxxlxp5m"
         }
       }
     },
@@ -306,6 +489,34 @@
         "x-stoplight": {
           "id": "bpwxc4slcu1wz"
         }
+      },
+      "test1": {
+        "title": "test1",
+        "x-stoplight": {
+          "id": "q82nm4lnd31oz"
+        },
+        "type": "object",
+        "properties": {
+          "ibigd": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "y97xb1np9bzoc"
+            }
+          },
+          "ss": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "laq9rieomw210"
+            }
+          },
+          "xsxsx": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "2ua6pvciwmb7u"
+            }
+          }
+        },
+        "description": "test1"
       }
     }
   }
